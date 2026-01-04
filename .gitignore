@@ -7,6 +7,10 @@
 *.obj
 *.elf
 
+# .o and .d directory and executable
+.build
+c-compiler
+
 # Linker output
 *.ilk
 *.map
