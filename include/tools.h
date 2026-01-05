@@ -5,8 +5,7 @@
 /*
  * Includes
 */
-#include <string.h>
-#include <stdlib.h>
+#include <stddef.h> // size_t
 
 
 /*

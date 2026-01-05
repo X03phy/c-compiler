@@ -1,4 +1,6 @@
 #include "token.h"
+#include "colors.h"
+#include <stdio.h> // printf
 
 
 void print_token_list(t_token_list *tok_lst, const char *src)

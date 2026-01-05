@@ -1,4 +1,5 @@
 #include "lexer.h"
+#include <stdbool.h> // bool, true
 
 
 void lexer_init(t_lexer *lx, const char *src)

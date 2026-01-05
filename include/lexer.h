@@ -5,10 +5,9 @@
 /*
  * Includes
 */
-#include <stdbool.h>
-#include <ctype.h>
-#include <string.h>
-#include "token.h"
+#include <stddef.h> // size_t
+#include <stdbool.h> // bool
+#include "token.h" // token types and functions
 
 
 /*

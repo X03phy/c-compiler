@@ -5,9 +5,7 @@
 /*
  * Includes
 */
-#include <stdlib.h>
-#include <stdio.h>
-#include "colors.h"
+#include <stddef.h> // size_t
 
 
 /*

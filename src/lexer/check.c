@@ -1,4 +1,7 @@
 #include "lexer.h"
+#include <stdbool.h> // bool, true, false
+#include <stddef.h> // size_t
+#include <string.h> // strncmp()
 
 
 bool is_keyword(const char *start, size_t len)

@@ -1,4 +1,5 @@
 #include "token.h"
+#include <stdlib.h> // malloc(), NULL, free()
 
 
 void token_list_init(t_token_list *lst)

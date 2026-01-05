@@ -1,4 +1,7 @@
 #include "lexer.h"
+#include "token.h"
+#include <ctype.h> // isalnum()
+#include <stdbool.h> // false, true
 
 
 void lex_identifier_or_keyword(t_lexer *lx, t_token *tok)

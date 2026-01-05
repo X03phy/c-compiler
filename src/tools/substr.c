@@ -1,6 +1,7 @@
-#include <stdio.h>
-#include <string.h> // For strlen(), strdup()
-#include <stdlib.h>
+#include "tools.h"
+#include <stdlib.h> // size_t, malloc()
+#include <string.h> // strlen(), strdup(), strncpy()
+
 
 char *substr(char const *str, unsigned int start, size_t length)
 {
