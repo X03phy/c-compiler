@@ -1,7 +1,8 @@
 #include "compiler.h"
 #include "colors.h"
-#include <stdio.h> // FILE, 
+#include <stdio.h> // FILE, fopen(), fseek(), SEEK_END, ftell(), rewind(), fread(), ferror(), fclose()
 #include <stdlib.h> // perror(), malloc(), free()
+
 
 char *read_file(const char *path)
 {

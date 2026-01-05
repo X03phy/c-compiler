@@ -3,6 +3,7 @@
 #include "token.h"
 #include <stdlib.h> // free()
 
+
 int compiler(const char *path)
 {
 	char *buffer = NULL;

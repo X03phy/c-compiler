@@ -22,8 +22,6 @@ t_token lexer_next(t_lexer *lx)
 	}
 
 	lexer_begin_token(lx);
-#include <stdio.h>
-
 
 	if (isalpha(lexer_peek(lx)) || lexer_peek(lx) == '_')
 		lex_identifier_or_keyword(lx, &tok);
