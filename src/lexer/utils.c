@@ -1,4 +1,5 @@
 #include "lexer.h"
+#include <string.h> // strlen()
 #include <stdbool.h> // bool, true
 
 
