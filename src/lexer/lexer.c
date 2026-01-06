@@ -9,7 +9,7 @@ t_token lexer_next(t_lexer *lx)
 {
 	t_token tok;
 
-	while (isspace(lexer_peek(lx)))
+	while (isspace((unsigned char)lexer_peek(lx)))
 		lexer_advance(lx, false);
 
 	if (lexer_peek(lx) == '\0') {
@@ -23,9 +23,9 @@ t_token lexer_next(t_lexer *lx)
 
 	lexer_begin_token(lx);
 
-	if (isalpha(lexer_peek(lx)) || lexer_peek(lx) == '_')
+	if (isalpha((unsigned char)lexer_peek(lx)) || lexer_peek(lx) == '_')
 		lex_identifier_or_keyword(lx, &tok);
-	else if (isdigit(lexer_peek(lx)))
+	else if (isdigit((unsigned char)lexer_peek(lx)))
 		lex_number(lx, &tok);
 	else
 		lex_operator_or_punctuator(lx, &tok);

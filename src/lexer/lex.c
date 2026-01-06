@@ -6,7 +6,7 @@
 
 void lex_identifier_or_keyword(t_lexer *lx, t_token *tok)
 {
-	while (isalnum(lexer_peek(lx)) || lexer_peek(lx) == '_')
+	while (isalnum((unsigned char)lexer_peek(lx)) || lexer_peek(lx) == '_')
 		lexer_advance(lx, false);
 
 	tok->start = lx->tok_start;
@@ -23,7 +23,7 @@ void lex_identifier_or_keyword(t_lexer *lx, t_token *tok)
 
 void lex_number(t_lexer *lx, t_token *tok)
 {
-	while (isalnum(lexer_peek(lx)) || lexer_peek(lx) == '_')
+	while (isalnum((unsigned char)lexer_peek(lx)) || lexer_peek(lx) == '_')
 		lexer_advance(lx, false);
 
 	tok->start = lx->tok_start;
@@ -37,7 +37,11 @@ void lex_number(t_lexer *lx, t_token *tok)
 
 void lex_operator_or_punctuator(t_lexer *lx, t_token *tok)
 {
-	lexer_advance(lx, false); //! A corriger, bon pour la premiere phase de test
+	if (strchr("")) {
+
+	}
+	while (is_operator())
+		lexer_advance(lx, false); //! A corriger, bon pour la premiere phase de test
 
 	tok->start = lx->tok_start;
 	tok->len   = (lx->src + lx->pos) - lx->tok_start;
