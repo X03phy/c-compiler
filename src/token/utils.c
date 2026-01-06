@@ -11,7 +11,7 @@ void print_token_list(t_token_list *tok_lst, const char *src)
 		[TOKEN_INVALID]    = "INVALID",
 		[TOKEN_KEYWORD]    = "KEYWORD",
 		[TOKEN_IDENTIFIER] = "IDENTIFIER",
-		[TOKEN_INT]        = "CONSTANT",
+		[TOKEN_INT]        = "INT",
 		[TOKEN_FLOAT]      = "FLOAT",
 		[TOKEN_CHAR]       = "CHAR",
 		[TOKEN_STRING]     = "STRING",
