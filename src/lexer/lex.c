@@ -14,37 +14,67 @@ typedef struct s_op
 
 
 static const t_op g_ops[] = { //! Check to add
-	/* multi-char operators */
+	/* 3-char Assignment Operator */
 	{"<<=", TOKEN_OPERATOR},
 	{">>=", TOKEN_OPERATOR},
-	{"++",  TOKEN_OPERATOR},
-	{"--",  TOKEN_OPERATOR},
-	{"->",  TOKEN_OPERATOR},
-	{"+=",  TOKEN_OPERATOR},
-	{"-=",  TOKEN_OPERATOR},
-	{"*=",  TOKEN_OPERATOR},
-	{"/=",  TOKEN_OPERATOR},
-	{"==",  TOKEN_OPERATOR},
-	{"!=",  TOKEN_OPERATOR},
-	{"<=",  TOKEN_OPERATOR},
-	{">=",  TOKEN_OPERATOR},
-	{"&&",  TOKEN_OPERATOR},
-	{"||",  TOKEN_OPERATOR},
 
-	/* 1-char operators */
+	/* 3-char punctuator */
+	{"...", TOKEN_PUNCTUATOR},
+
+	{"->", TOKEN_OPERATOR},
+
+	/* 2-char Unary Operator */
+	{"++", TOKEN_OPERATOR},
+	{"--", TOKEN_OPERATOR},
+
+	/* 2-char Rational Operator */
+	{"<=", TOKEN_OPERATOR},
+	{">=", TOKEN_OPERATOR},
+	{"==", TOKEN_OPERATOR},
+	{"!=", TOKEN_OPERATOR},
+
+	/* 2-char Logical Operator */
+	{"&&", TOKEN_OPERATOR},
+	{"||", TOKEN_OPERATOR},
+
+	/* 2-char Bitwise Operator */
+	{"<<", TOKEN_OPERATOR},
+	{">>", TOKEN_OPERATOR},
+
+	/* 2-char Assignment Operator */
+	{"+=", TOKEN_OPERATOR},
+	{"-=", TOKEN_OPERATOR},
+	{"*=", TOKEN_OPERATOR},
+	{"/=", TOKEN_OPERATOR},
+	{"&=", TOKEN_OPERATOR},
+	{"|=", TOKEN_OPERATOR},
+	{"~=", TOKEN_OPERATOR},
+	{"^=", TOKEN_OPERATOR},
+
+	/* 1-char Arithmetic Operator */
 	{"+", TOKEN_OPERATOR},
 	{"-", TOKEN_OPERATOR},
 	{"*", TOKEN_OPERATOR},
 	{"/", TOKEN_OPERATOR},
 	{"%", TOKEN_OPERATOR},
-	{"=", TOKEN_OPERATOR},
+
+	/* 1-char Rational Operator */
 	{"<", TOKEN_OPERATOR},
 	{">", TOKEN_OPERATOR},
+
+	/* 1-char Logical Operator */
 	{"!", TOKEN_OPERATOR},
+
+	/* 1-char Bitwise Operator */
 	{"&", TOKEN_OPERATOR},
 	{"|", TOKEN_OPERATOR},
-	{"^", TOKEN_OPERATOR},
 	{"~", TOKEN_OPERATOR},
+	{"^", TOKEN_OPERATOR},
+
+	/* 1-char Assignment Operator */
+	{"=", TOKEN_OPERATOR},
+
+	/* 1-char Ternary Operator */
 	{"?", TOKEN_OPERATOR},
 	{":", TOKEN_OPERATOR},
 
