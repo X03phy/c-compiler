@@ -1,5 +1,6 @@
 #include "token.h"
 #include "colors.h"
+#include <stddef.h> // size_t
 #include <stdio.h> // printf()
 
 
@@ -15,13 +16,13 @@ void print_token_list(t_token_list *tok_lst, const char *src)
 		[TOKEN_OPERATOR]   = "OPERATOR",
 		[TOKEN_PUNCTUATOR] = "PUNCTUATOR"
 	};
-	int i = 0;
+	size_t i = 0;
 
 	(void)src;
 	while (tok_lst) {
-		printf(GREEN "token %d:" RED " value: '%.*s'" BLUE " type: %s\n" RESET,
+		printf(GREEN "token %zu:" RED " value: '%.*s'" BLUE " type: %s\n" RESET,
 		       i,
-		       (int)tok_lst->token.len, tok_lst->token.start,
+		       (int)tok_lst->token.len, tok_lst->token.start, //! Check doc
 		       token_type_name[tok_lst->token.type]
 		      );
 		tok_lst = tok_lst->next;

@@ -37,12 +37,7 @@ void lex_number(t_lexer *lx, t_token *tok)
 
 void lex_operator_or_punctuator(t_lexer *lx, t_token *tok)
 {
-	if (strchr("")) {
-
-	}
-	while (is_operator())
-		lexer_advance(lx, false); //! A corriger, bon pour la premiere phase de test
-
+	static const t_op ops = {}
 	tok->start = lx->tok_start;
 	tok->len   = (lx->src + lx->pos) - lx->tok_start;
 	tok->line  = lx->tok_line;
