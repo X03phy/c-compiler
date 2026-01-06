@@ -34,12 +34,12 @@ typedef struct s_lexer
 // utils.c
 void lexer_init(t_lexer *lx, const char *src);
 char lexer_advance(t_lexer *lx, bool str);
+void lexer_advance_n(t_lexer *lx, size_t n);
 char lexer_peek(t_lexer *lx);
 void lexer_begin_token(t_lexer *lx);
 
 // check.c
 bool is_keyword(const char *start, size_t len);
-bool is_punctuator(const char *substr);
 
 // lex.c
 void lex_identifier_or_keyword(t_lexer *lx, t_token *tok);

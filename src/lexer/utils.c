@@ -13,27 +13,33 @@ void lexer_init(t_lexer *lx, const char *src)
 }
 
 
-char lexer_advance(t_lexer *lx, bool str)
+char lexer_advance(t_lexer *lx, bool in_string)
 {
 	char c;
 
 	if (lx->pos >= lx->len)
 		return ('\0');
 
-	c = lx->src[lx->pos];
-	lx->pos += 1;
+	c = lx->src[lx->pos++];
 
-	if (c == '\n' && str == true)
-	{
+	if (!in_string && c == '\n') {
 		lx->line += 1;
 		lx->col = 1;
-	}
-	else
+	} else {
 		lx->col += 1;
+	}
 
 	return c;
 }
 
+
+void lexer_advance_n(t_lexer *lx, size_t n)
+{
+	size_t i;
+
+	for (i = 0; i < n; i += 1)
+		lexer_advance(lx, false);
+}
 
 char lexer_peek(t_lexer *lx)
 {

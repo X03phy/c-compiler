@@ -8,7 +8,7 @@ void print_token_list(t_token_list *tok_lst, const char *src)
 {
 	static const char *token_type_name[] = {
 		[TOKEN_EOF]        = "EOF",
-		[TOKEN_ERROR]      = "ERROR",
+		[TOKEN_INVALID]    = "INVALID",
 		[TOKEN_KEYWORD]    = "KEYWORD",
 		[TOKEN_IDENTIFIER] = "IDENTIFIER",
 		[TOKEN_CONSTANT]   = "CONSTANT",

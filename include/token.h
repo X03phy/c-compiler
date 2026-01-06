@@ -13,7 +13,7 @@
 */
 typedef enum e_token_type {
 	TOKEN_EOF,
-	TOKEN_ERROR,
+	TOKEN_INVALID,
 	TOKEN_KEYWORD,
 	TOKEN_IDENTIFIER,
 	TOKEN_CONSTANT, //! A affiner : int, float, char
