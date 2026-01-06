@@ -78,7 +78,7 @@ void lex_identifier_or_keyword(t_lexer *lx, t_token *tok)
 }
 
 
-void lex_number(t_lexer *lx, t_token *tok)
+void lex_number(t_lexer *lx, t_token *tok) //! Check error for 123abc or 123_ and special cases : binary and hexa ...
 {
 	while (isalnum((unsigned char)lexer_peek(lx)) || lexer_peek(lx) == '_')
 		lexer_advance(lx, false);
@@ -88,7 +88,7 @@ void lex_number(t_lexer *lx, t_token *tok)
 	tok->line  = lx->tok_line;
 	tok->col   = lx->tok_col;
 
-	tok->type = TOKEN_CONSTANT;
+	tok->type = TOKEN_INT;
 }
 
 

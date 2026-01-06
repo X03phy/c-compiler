@@ -1,6 +1,6 @@
 int main()
 {
-	int a = 2;
+	const char *a = "2a";
 
-	return (42);
+	return (42 + 0);
 }

@@ -16,7 +16,9 @@ typedef enum e_token_type {
 	TOKEN_INVALID,
 	TOKEN_KEYWORD,
 	TOKEN_IDENTIFIER,
-	TOKEN_CONSTANT, //! A affiner : int, float, char
+	TOKEN_INT,
+	TOKEN_FLOAT,
+	TOKEN_CHAR,
 	TOKEN_STRING,
 	TOKEN_OPERATOR,
 	TOKEN_PUNCTUATOR, // punctuators: ( ) [ ] { } * , : = ; ... #
