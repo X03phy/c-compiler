@@ -41,6 +41,7 @@ void lexer_advance_n(t_lexer *lx, size_t n)
 		lexer_advance(lx, false);
 }
 
+
 char lexer_peek(t_lexer *lx)
 {
 	if (lx->pos >= lx->len)
