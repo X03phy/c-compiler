@@ -13,7 +13,7 @@ typedef struct s_op
 } t_op;
 
 
-static const t_op g_ops[] = {
+static const t_op g_ops[] = { //! Check to add
 	/* multi-char operators */
 	{"<<=", TOKEN_OPERATOR},
 	{">>=", TOKEN_OPERATOR},
