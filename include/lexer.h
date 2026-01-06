@@ -33,7 +33,7 @@ typedef struct s_lexer
 */
 // utils.c
 void lexer_init(t_lexer *lx, const char *src);
-char lexer_advance(t_lexer *lx, bool str);
+char lexer_advance(t_lexer *lx, bool in_string);
 void lexer_advance_n(t_lexer *lx, size_t n);
 char lexer_peek(t_lexer *lx);
 void lexer_begin_token(t_lexer *lx);
