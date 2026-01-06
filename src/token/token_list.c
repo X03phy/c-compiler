@@ -51,25 +51,3 @@ void token_list_free(t_token_list **lst)
 	}
 	*lst = NULL;
 }
-
-
-//void print_token_list(t_token_list *lst)
-//{
-//	static const char *names[] = {
-//		[TOKEN_EOF]        = "EOF",
-//		[TOKEN_ERROR]      = "ERROR",
-//		[TOKEN_KEYWORD]    = "KEYWORD",
-//		[TOKEN_IDENTIFIER] = "IDENTIFIER",
-//		[TOKEN_CONSTANT]   = "CONSTANT",
-//		[TOKEN_STRING]     = "STRING",
-//		[TOKEN_OPERATOR]   = "OPERATOR",
-//		[TOKEN_PUNCTUATOR] = "PUNCTUATOR"
-//	};
-
-//	int i = 0;
-//	while (lst) {
-//		printf("%s: %s\n", names[lst->token->type], substr());
-//		i++;
-//		lst = lst->next;
-//	}
-//}
