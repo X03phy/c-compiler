@@ -13,81 +13,82 @@ typedef struct s_op
 } t_op;
 
 
-static const t_op g_ops[] = { //! Check to add
+static const t_op g_ops[] = { //! Change name -> plus precis
 	/* 3-char Assignment Operator */
-	{"<<=", TOKEN_OPERATOR},
-	{">>=", TOKEN_OPERATOR},
+	{"<<=", TOKEN_LSHIFT_ASSIGN},
+	{">>=", TOKEN_RSHIFT_ASSIGN},
 
-	/* 3-char punctuator */
-	{"...", TOKEN_PUNCTUATOR},
+	/* 3-char Punctuator */
+	{"...", TOKEN_ELLIPSIS},
 
-	{"->", TOKEN_OPERATOR},
+	/* 2-char Special Operator */
+	{"->", TOKEN_ARROW},
 
 	/* 2-char Unary Operator */
-	{"++", TOKEN_OPERATOR},
-	{"--", TOKEN_OPERATOR},
+	{"++", TOKEN_INCREMENT},
+	{"--", TOKEN_DECREMENT},
 
 	/* 2-char Rational Operator */
-	{"<=", TOKEN_OPERATOR},
-	{">=", TOKEN_OPERATOR},
-	{"==", TOKEN_OPERATOR},
-	{"!=", TOKEN_OPERATOR},
+	{"<=", TOKEN_LEQ},
+	{">=", TOKEN_GEQ},
+	{"==", TOKEN_EQ},
+	{"!=", TOKEN_NEQ},
 
 	/* 2-char Logical Operator */
-	{"&&", TOKEN_OPERATOR},
-	{"||", TOKEN_OPERATOR},
+	{"&&", TOKEN_LOGICAL_AND},
+	{"||", TOKEN_LOGICAL_OR},
 
 	/* 2-char Bitwise Operator */
-	{"<<", TOKEN_OPERATOR},
-	{">>", TOKEN_OPERATOR},
+	{"<<", TOKEN_LSHIFT},
+	{">>", TOKEN_RSHIFT},
 
 	/* 2-char Assignment Operator */
-	{"+=", TOKEN_OPERATOR},
-	{"-=", TOKEN_OPERATOR},
-	{"*=", TOKEN_OPERATOR},
-	{"/=", TOKEN_OPERATOR},
-	{"&=", TOKEN_OPERATOR},
-	{"|=", TOKEN_OPERATOR},
-	{"~=", TOKEN_OPERATOR},
-	{"^=", TOKEN_OPERATOR},
+	{"+=", TOKEN_ADD_ASSIGN},
+	{"-=", TOKEN_SUB_ASSIGN},
+	{"*=", TOKEN_MUL_ASSIGN},
+	{"/=", TOKEN_DIV_ASSIGN},
+	{"&=", TOKEN_AND_ASSIGN},
+	{"|=", TOKEN_OR_ASSIGN},
+	{"~=", TOKEN_INV_ASSIGN},
+	{"^=", TOKEN_XOR_ASSIGN},
 
 	/* 1-char Arithmetic Operator */
-	{"+", TOKEN_OPERATOR},
-	{"-", TOKEN_OPERATOR},
-	{"*", TOKEN_OPERATOR},
-	{"/", TOKEN_OPERATOR},
-	{"%", TOKEN_OPERATOR},
+	{"+", TOKEN_ADD},
+	{"-", TOKEN_SUB},
+	{"*", TOKEN_MUL},
+	{"/", TOKEN_DIV},
+	{"%", TOKEN_MOD},
 
 	/* 1-char Rational Operator */
-	{"<", TOKEN_OPERATOR},
-	{">", TOKEN_OPERATOR},
+	{"<", TOKEN_LESS},
+	{">", TOKEN_GREATER},
 
 	/* 1-char Logical Operator */
-	{"!", TOKEN_OPERATOR},
+	{"!", TOKEN_NOT},
 
 	/* 1-char Bitwise Operator */
-	{"&", TOKEN_OPERATOR},
-	{"|", TOKEN_OPERATOR},
-	{"~", TOKEN_OPERATOR},
-	{"^", TOKEN_OPERATOR},
+	{"&", TOKEN_AND},
+	{"|", TOKEN_OR},
+	{"~", TOKEN_INV},
+	{"^", TOKEN_XOR},
 
 	/* 1-char Assignment Operator */
-	{"=", TOKEN_OPERATOR},
+	{"=", TOKEN_ASSIGN},
 
 	/* 1-char Ternary Operator */
-	{"?", TOKEN_OPERATOR},
-	{":", TOKEN_OPERATOR},
+	{"?", TOKEN_QUESTION},
+	{":", TOKEN_COLON},
 
-	/* punctuators */
-	{"(", TOKEN_PUNCTUATOR},
-	{")", TOKEN_PUNCTUATOR},
-	{"{", TOKEN_PUNCTUATOR},
-	{"}", TOKEN_PUNCTUATOR},
-	{"[", TOKEN_PUNCTUATOR},
-	{"]", TOKEN_PUNCTUATOR},
-	{";", TOKEN_PUNCTUATOR},
-	{",", TOKEN_PUNCTUATOR},
-	{".", TOKEN_PUNCTUATOR},
+	/* 1-char Punctuator */
+	{"(", TOKEN_LPAREN},
+	{")", TOKEN_RPAREN},
+	{"{", TOKEN_LBRACE},
+	{"}", TOKEN_RBRACE},
+	{"[", TOKEN_LBRACKET},
+	{"]", TOKEN_RBRACKET},
+	{";", TOKEN_SEMICOLON},
+	{",", TOKEN_COMMA},
+	{".", TOKEN_DOT},
 };
 
 

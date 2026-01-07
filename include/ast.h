@@ -3,6 +3,12 @@
 
 
 /*
+ * Includes
+*/
+#include "token.h"
+
+
+/*
  * Enums
 */
 typedef enum e_ast_type
@@ -15,33 +21,51 @@ typedef enum e_ast_type
 
 
 /*
+ * Unions
+*/
+typedef union u_ast {
+	struct {
+		t_token_type op;
+		struct s_ast *left;
+		struct s_ast *right;
+	} bin;
+
+	struct {
+		t_token_type op;
+		struct s_ast *expression;
+	} un;
+
+	struct {
+		const char *value; // ou int / double selon ton lexer
+	} literal;
+
+	struct {
+		const char *name;
+	} identifier;
+} t_ast_u;
+
+
+/*
  * Structures
 */
 typedef struct s_ast
 {
-	t_ast_type	type;
-
-	union {
-		struct {
-			int op;    // type de token (ex: TOKEN_PLUS)
-			struct s_ast *left;
-			struct s_ast *right;
-		} binop;
-
-		struct {
-			int op;
-			struct s_ast *expr;
-		} unop;
-
-		struct {
-			char *value; // ou int / double selon ton lexer
-		} literal;
-
-		struct {
-			char *name;
-		} identifier;
-	} u;
+	t_ast_type type;
+	t_ast_u u;
 } t_ast;
+
+
+/*
+ * Prototypes
+*/
+// utils.c
+void ast_print(t_ast *tree);
+
+// ast.c
+
+
+
+
 
 
 #endif
