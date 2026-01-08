@@ -3,7 +3,7 @@
 #include "token.h"
 
 
-t_ast *parser(t_token_list *token_list)
-{
+// t_ast *parser(t_token_list *token_list)
+// {
 
-}
+// }

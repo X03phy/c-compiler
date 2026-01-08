@@ -26,7 +26,6 @@ typedef enum e_token_type {
 	// Operators
 	TOKEN_LSHIFT_ASSIGN,
 	TOKEN_RSHIFT_ASSIGN,
-	TOKEN_ELLIPSIS,
 	TOKEN_ARROW,
 	TOKEN_INCREMENT,
 	TOKEN_DECREMENT,
@@ -63,6 +62,7 @@ typedef enum e_token_type {
 	TOKEN_COLON,
 
 	// Punctuators
+	TOKEN_ELLIPSIS,
 	TOKEN_LPAREN,
 	TOKEN_RPAREN,
 	TOKEN_LBRACE,
@@ -102,7 +102,7 @@ int token_list_push(t_token_list **lst, t_token tok);
 void token_list_free(t_token_list **lst);
 
 // utils.c
-void print_token_list(t_token_list *tok_lst, const char *src);
+void print_token_list(t_token_list *tok_lst);
 
 
 #endif

@@ -19,7 +19,7 @@ int compiler(const char *path)
 		return (1);
 	}
 
-	print_token_list(token_list, buffer);
+	print_token_list(token_list);
 
 	token_list_free(&token_list);
 	free(buffer);

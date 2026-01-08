@@ -14,35 +14,35 @@ typedef struct s_op
 
 
 static const t_op g_ops[] = { //! Change name -> plus precis
-	/* 3-char Assignment Operator */
+	/* 3-char Assignment Operators */
 	{"<<=", TOKEN_LSHIFT_ASSIGN},
 	{">>=", TOKEN_RSHIFT_ASSIGN},
 
-	/* 3-char Punctuator */
+	/* 3-char Punctuators */
 	{"...", TOKEN_ELLIPSIS},
 
-	/* 2-char Special Operator */
+	/* 2-char Special Operators */
 	{"->", TOKEN_ARROW},
 
-	/* 2-char Unary Operator */
+	/* 2-char Unary Operators */
 	{"++", TOKEN_INCREMENT},
 	{"--", TOKEN_DECREMENT},
 
-	/* 2-char Rational Operator */
+	/* 2-char Rational Operators */
 	{"<=", TOKEN_LEQ},
 	{">=", TOKEN_GEQ},
 	{"==", TOKEN_EQ},
 	{"!=", TOKEN_NEQ},
 
-	/* 2-char Logical Operator */
+	/* 2-char Logical Operators */
 	{"&&", TOKEN_LOGICAL_AND},
 	{"||", TOKEN_LOGICAL_OR},
 
-	/* 2-char Bitwise Operator */
+	/* 2-char Bitwise Operators */
 	{"<<", TOKEN_LSHIFT},
 	{">>", TOKEN_RSHIFT},
 
-	/* 2-char Assignment Operator */
+	/* 2-char Assignment Operators */
 	{"+=", TOKEN_ADD_ASSIGN},
 	{"-=", TOKEN_SUB_ASSIGN},
 	{"*=", TOKEN_MUL_ASSIGN},
@@ -52,34 +52,34 @@ static const t_op g_ops[] = { //! Change name -> plus precis
 	{"~=", TOKEN_INV_ASSIGN},
 	{"^=", TOKEN_XOR_ASSIGN},
 
-	/* 1-char Arithmetic Operator */
+	/* 1-char Arithmetic Operators */
 	{"+", TOKEN_ADD},
 	{"-", TOKEN_SUB},
 	{"*", TOKEN_MUL},
 	{"/", TOKEN_DIV},
 	{"%", TOKEN_MOD},
 
-	/* 1-char Rational Operator */
+	/* 1-char Rational Operators */
 	{"<", TOKEN_LESS},
 	{">", TOKEN_GREATER},
 
-	/* 1-char Logical Operator */
+	/* 1-char Logical Operators */
 	{"!", TOKEN_NOT},
 
-	/* 1-char Bitwise Operator */
+	/* 1-char Bitwise Operators */
 	{"&", TOKEN_AND},
 	{"|", TOKEN_OR},
 	{"~", TOKEN_INV},
 	{"^", TOKEN_XOR},
 
-	/* 1-char Assignment Operator */
+	/* 1-char Assignment Operators */
 	{"=", TOKEN_ASSIGN},
 
-	/* 1-char Ternary Operator */
+	/* 1-char Ternary Operators */
 	{"?", TOKEN_QUESTION},
 	{":", TOKEN_COLON},
 
-	/* 1-char Punctuator */
+	/* 1-char Punctuators */
 	{"(", TOKEN_LPAREN},
 	{")", TOKEN_RPAREN},
 	{"{", TOKEN_LBRACE},
