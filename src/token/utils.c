@@ -6,7 +6,7 @@
 
 static const char *g_token_type_name[] = {
 	[TOKEN_EOF]           = "EOF",
-	[TOKEN_INVALID]       = "INVALID",
+	[TOKEN_ERROR]         = "ERROR",
 
 	/* Identifiers & literals */
 	[TOKEN_KEYWORD]       = "KEYWORD",
