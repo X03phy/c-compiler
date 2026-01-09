@@ -132,7 +132,7 @@ static const t_token_spec g_token_punctuators_table[] = {
 };
 
 
-static bool match_table(t_lexer *lx, t_token *tok, t_token_spec *table, size_t table_size)
+static bool match_table(t_lexer *lx, t_token *tok, const t_token_spec *table, const size_t table_size)
 {
 	size_t i;
 	size_t len;
@@ -162,16 +162,8 @@ void lex_keyword_or_identifier(t_lexer *lx, t_token *tok)
 {
 	size_t n;
 
-	while (isalnum((unsigned char)lexer_peek(lx)) || lexer_peek(lx) == '_')
-		lexer_advance(lx, false);
-
-	tok->start = lx->tok_start;
-	tok->len   = (lx->src + lx->pos) - lx->tok_start;
-	tok->line  = lx->tok_line;
-	tok->col   = lx->tok_col;
-
 	n = sizeof(g_token_keywords_table) / sizeof(g_token_keywords_table[0]);
-	if (!match_table(lx, tok, g_token_keywords_table, n) {
+	if (!match_table(lx, tok, g_token_keywords_table, n)) {
 		while (isalnum((unsigned char)lexer_peek(lx)) || lexer_peek(lx) == '_')
 		lexer_advance(lx, false);
 
@@ -179,7 +171,7 @@ void lex_keyword_or_identifier(t_lexer *lx, t_token *tok)
 		tok->len   = (lx->src + lx->pos) - lx->tok_start;
 		tok->line  = lx->tok_line;
 		tok->col   = lx->tok_col;
-        	tok->type  = TOKEN_IDENTIFIER;
+		tok->type  = TOKEN_IDENTIFIER;
 	}
 }
 
@@ -194,28 +186,21 @@ void lex_number(t_lexer *lx, t_token *tok) //! Check error for 123abc or 123_ an
 	tok->line  = lx->tok_line;
 	tok->col   = lx->tok_col;
 
-	tok->type = TOKEN_INT;
+	tok->type = TOKEN_LIT_INT;
 }
 
 
 void lex_operator_or_punctuator(t_lexer *lx, t_token *tok)
 {
-	size_t i;
-	size_t len;
+	size_t n;
 
-	for (i = 0; i < sizeof(g_ops) / sizeof(g_ops[0]); i += 1) {
-		len = strlen(g_ops[i].str);
-		if ((strncmp(lx->src + lx->pos, g_ops[i].str, len) == 0)) {
-			tok->start = lx->src + lx->pos;
-			tok->len = len;
-			tok->type = g_ops[i].type;
-			tok->line = lx->tok_line;
-			tok->col = lx->tok_col;
+	n = sizeof(g_token_operators_table) / sizeof(g_token_operators_table[0]);
+	if (match_table(lx, tok, g_token_operators_table, n))
+		return ;
 
-			lexer_advance_n(lx, len);
-			return ;
-		}
-	}
+	n = sizeof(g_token_punctuators_table) / sizeof(g_token_punctuators_table[0]);
+	if (match_table(lx, tok, g_token_punctuators_table, n))
+		return ;
 
 	tok->start = lx->tok_start + lx->pos;
 	tok->len   = 1;

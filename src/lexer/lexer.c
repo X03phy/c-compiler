@@ -24,7 +24,7 @@ t_token lexer_next(t_lexer *lx)
 	lexer_begin_token(lx);
 
 	if (isalpha((unsigned char)lexer_peek(lx)) || lexer_peek(lx) == '_')
-		lex_identifier_or_keyword(lx, &tok);
+		lex_keyword_or_identifier(lx, &tok);
 	else if (isdigit((unsigned char)lexer_peek(lx)))
 		lex_number(lx, &tok);
 	else

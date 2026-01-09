@@ -42,7 +42,7 @@ void lexer_begin_token(t_lexer *lx);
 bool is_keyword(const char *start, size_t len);
 
 // lex.c
-void lex_identifier_or_keyword(t_lexer *lx, t_token *tok);
+void lex_keyword_or_identifier(t_lexer *lx, t_token *tok);
 void lex_number(t_lexer *lx, t_token *tok);
 void lex_operator_or_punctuator(t_lexer *lx, t_token *tok);
 
