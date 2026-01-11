@@ -49,7 +49,6 @@ static const t_token_spec g_token_keywords_table[] = {
 };
 
 
-
 static const t_token_spec g_token_operators_table[] = {
 	/* 3-char Assignment Operators */
 	{"<<=", TOKEN_OP_LSHIFT_ASSIGN},
@@ -173,6 +172,48 @@ void lex_keyword_or_identifier(t_lexer *lx, t_token *tok)
 		tok->col   = lx->tok_col;
 		tok->type  = TOKEN_IDENTIFIER;
 	}
+}
+
+
+void lex_string(t_lexer *lx, t_token *tok)
+{
+	char c;
+
+	c = lexer_advance(lx, false);
+
+	while (c && c != '\"')
+		c = lexer_advance(lx, true);
+
+	if (c)
+		lexer_advance(lx, false);
+
+	tok->start = lx->tok_start;
+	tok->len   = (lx->src + lx->pos) - lx->tok_start;
+	tok->line  = lx->tok_line;
+	tok->col   = lx->tok_col;
+
+	tok->type = TOKEN_LIT_STRING;
+}
+
+
+void lex_char(t_lexer *lx, t_token *tok)
+{
+	char c;
+
+	c = lexer_advance(lx, false);
+
+	while (c && c != '\'')
+		c = lexer_advance(lx, true);
+
+	if (c)
+		lexer_advance(lx, false);
+
+	tok->start = lx->tok_start;
+	tok->len   = (lx->src + lx->pos) - lx->tok_start;
+	tok->line  = lx->tok_line;
+	tok->col   = lx->tok_col;
+
+	tok->type = TOKEN_LIT_CHAR;
 }
 
 

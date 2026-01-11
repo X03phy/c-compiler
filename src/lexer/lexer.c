@@ -27,6 +27,10 @@ t_token lexer_next(t_lexer *lx)
 		lex_keyword_or_identifier(lx, &tok);
 	else if (isdigit((unsigned char)lexer_peek(lx)))
 		lex_number(lx, &tok);
+	else if (lexer_peek(lx) == '\"')
+		lex_string(lx, &tok);
+	else if (lexer_peek(lx) == '\'')
+		lex_char(lx, &tok);
 	else
 		lex_operator_or_punctuator(lx, &tok);
 

@@ -20,7 +20,7 @@ char lexer_advance(t_lexer *lx, bool in_string)
 	if (lx->pos >= lx->len)
 		return ('\0');
 
-	c = lx->src[lx->pos++];
+	c = lx->src[++lx->pos];
 
 	if (!in_string && c == '\n') {
 		lx->line += 1;
