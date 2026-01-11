@@ -13,6 +13,7 @@
 */
 typedef enum e_ast_type
 {
+	AST_FUNCTION,
 	AST_BINOP,     // a + b, a * b, a == b
 	AST_UNOP,      // -a, !a
 	AST_LITERAL,   // nombre, string
@@ -24,24 +25,11 @@ typedef enum e_ast_type
  * Unions
 */
 typedef union u_ast {
-	struct {
-		t_token_type op;
-		struct s_ast *left;
-		struct s_ast *right;
-	} bin;
-
-	struct {
-		t_token_type op;
-		struct s_ast *expression;
-	} un;
-
-	struct {
-		const char *value; // ou int / double selon ton lexer
-	} literal;
-
-	struct {
-		const char *name;
-	} identifier;
+	struct function_definition {
+		char *name;
+		//void *args;
+		//t_ast *body;          // compound stmt
+	} t_ast_function;
 } t_ast_u;
 
 
