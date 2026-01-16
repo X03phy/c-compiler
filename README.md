@@ -21,3 +21,5 @@ and linker can turn it into an executable.
 https://www.kernel.org/doc/html/v4.10/process/coding-style.html
 
 https://en.cppreference.com/w/c/keyword.html
+
+https://icps.u-strasbg.fr/~pop/gcc-ast.html
